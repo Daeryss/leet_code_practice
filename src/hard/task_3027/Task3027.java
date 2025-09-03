@@ -2,8 +2,6 @@ package hard.task_3027;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Stack;
 
 /**
  * LeetCode — 2976. Find the Number of Ways to Place People II
@@ -105,7 +103,7 @@ public class Task3027 {
                 int[] b = nodes.get(j);
 
                 if ((a[0] == b[0] && a[1] > b[1]) || (a[1] >= b[1])) {
-                    if (isValidPoints(nodes, i, j)) {
+                    if (areValidPoints(nodes, i, j)) {
                         result++;
                     }
                 }
@@ -115,7 +113,7 @@ public class Task3027 {
         return result;
     }
 
-    private static boolean isValidPoints(ArrayList<int[]> nodes, int aliceindex, int bobIndex) {
+    private static boolean areValidPoints(ArrayList<int[]> nodes, int aliceindex, int bobIndex) {
         int maxY = nodes.get(aliceindex)[1];
         int minY = nodes.get(bobIndex)[1];
 
